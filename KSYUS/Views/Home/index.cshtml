@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KSYUS.Models.students>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Home</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayTextFor(modelItem => item.BirthDate)
+        </td>
+        <td>
+            <a href="/Home/Edit/@item.ID">Edit</a>
+            <a href="/Home/Details/@item.ID">Details</a>
+            <a href="/Home/Delete/@item.ID">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

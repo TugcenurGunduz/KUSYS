@@ -1,0 +1,58 @@
+﻿@model KSYUS.Models.kursmodel
+
+
+@{
+    ViewBag.Title = "assign";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Assign to Lesson</h2>
+
+@*<form method="post">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BirthDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseID)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BirthDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseID)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Assign For Student", "Assignforstudents", new { @name = "Assign" })
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </form>*@
+<div>
+    <label>Kurs Seçin</label>
+    @Html.DropDownListFor(m => m.Student, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+   @* @Html.DropDownListFor(m => m.Degerler, (List<SelectListItem>)ViewBag.std, new { @class = "form-control" })*@
+
+</div>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<KSYUS.Models.course>
+
+@{
+    ViewBag.Title = "Lessons";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lessons</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourseName)
+    </td>
+    <td>
+        @*@Html.ActionLink("Assign a Lesson ", "assign", new { id = item.CourseID }) |*@
+        @Html.ActionLink("Assign a Lesson ", "assign")
+    </td>
+</tr>
+}
+
+</table>

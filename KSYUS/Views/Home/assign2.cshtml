@@ -1,0 +1,4 @@
+﻿@model KSYUS.Models.students
+
+<label>Kişi Seçin</label>
+@Html.DropDownListFor(m => m.FirstName, (List<SelectListItem>)ViewBag.kisiler, new { @class = "form-control" })

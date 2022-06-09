@@ -1,0 +1,27 @@
+﻿@model KSYUS.Models.students
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ekle</h2>
+
+<form method="post">
+    <input type="text" name="StudentID" />
+    <br />
+    <input type="text" name="FirstName" />
+    <br />
+    <input type="text" name="LastName" />
+    <br />
+    <input type="date" name="BirthDate" />
+    <br />
+    <button type="submit">Kaydet</button>
+</form>
+
+@if (ViewBag.Bilgi != null)
+{
+    <div class="alert alert-success mt-4">
+        @ViewBag.Bilgi
+    </div>
+}
